@@ -19,12 +19,13 @@ public class JdbcAccountDao implements AccountDao {
   //  public boolean create(int accountId, int userId){
   //  }
 
-    public BigDecimal getBalance(int id){
+    public BigDecimal getBalance(String username){
         String sql = "SELECT balance " +
-                     "FROM account " +
-                     "WHERE user_id = ?";
+                     "FROM account JOIN tenmo_user ON account.user_id = tenmo_user.user_id " +
+                     "WHERE username = ?;";
 
-        SqlRowSet result = jdbcTemplate.queryForRowSet(sql, id);
+
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql, username);
         BigDecimal balance = new BigDecimal(0.00);
 
         if (result.next()){

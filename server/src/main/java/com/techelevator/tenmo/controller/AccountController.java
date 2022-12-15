@@ -27,10 +27,10 @@ public class AccountController {
     }
 
 
-    @RequestMapping(path = "/accounts/balance/{id}", method = RequestMethod.GET)
-    public BigDecimal getBalance(@PathVariable int id){
+    @RequestMapping(path = "/balance", method = RequestMethod.GET)
+    public BigDecimal getBalance(Principal principal){
 
-        BigDecimal balance = new BigDecimal(String.valueOf(jdbcAccountDao.getBalance(id)));
+        BigDecimal balance = new BigDecimal(String.valueOf(jdbcAccountDao.getBalance(principal.getName())));
 
 //        if(balance.equals(null)){
 //            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account not found.");
