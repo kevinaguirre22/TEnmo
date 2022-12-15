@@ -34,3 +34,8 @@ public class JdbcAccountDao implements AccountDao {
     }
 }
 
+//principal, - get name to get username
+  //      use jdbc template to get rowset
+    //    now with maptoaccount(result) you have an account( find balance)
+
+

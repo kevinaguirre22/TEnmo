@@ -1,6 +1,5 @@
 package com.techelevator.tenmo.controller;
 
-//Controller to account accounts lol
 import com.techelevator.tenmo.dao.AccountDao;
 import com.techelevator.tenmo.dao.JdbcAccountDao;
 import com.techelevator.tenmo.dao.UserDao;
