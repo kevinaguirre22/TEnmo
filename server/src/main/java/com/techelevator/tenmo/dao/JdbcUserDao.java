@@ -1,5 +1,6 @@
 package com.techelevator.tenmo.dao;
 
+import com.techelevator.tenmo.model.Account;
 import com.techelevator.tenmo.model.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Component
 public class JdbcUserDao implements UserDao {
-private BigDecimal initialBalance =new BigDecimal("1000.00");
+    private BigDecimal initialBalance = new BigDecimal("1000.00");
     private JdbcTemplate jdbcTemplate;
 
     public JdbcUserDao(JdbcTemplate jdbcTemplate) {
@@ -76,6 +77,9 @@ private BigDecimal initialBalance =new BigDecimal("1000.00");
         }
         return true;
     }
+
+
+
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
         user.setId(rs.getInt("user_id"));
