@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class Transfer {
     private int transferId;
-    private String transferTo;
-    private String transferFrom;
+    private int transferTo;
+    private int transferFrom;
     private BigDecimal amount;
 
     public Transfer() {
@@ -19,19 +19,19 @@ public class Transfer {
         this.transferId = transferId;
     }
 
-    public String getTransferTo() {
+    public int getTransferTo() {
         return transferTo;
     }
 
-    public void setTransferTo(String transferTo) {
+    public void setTransferTo(int transferTo) {
         this.transferTo = transferTo;
     }
 
-    public String getTransferFrom() {
+    public int getTransferFrom() {
         return transferFrom;
     }
 
-    public void setTransferFrom(String transferFrom) {
+    public void setTransferFrom(int transferFrom) {
         this.transferFrom = transferFrom;
     }
 

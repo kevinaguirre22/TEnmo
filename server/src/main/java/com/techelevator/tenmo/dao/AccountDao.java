@@ -8,4 +8,6 @@ public interface AccountDao {
     //boolean create(int accountId, int userId);
 
     BigDecimal getBalance(String username);
+
+    BigDecimal getBalanceById(int id);
 }

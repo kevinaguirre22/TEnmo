@@ -33,10 +33,22 @@ public class JdbcAccountDao implements AccountDao {
         }
         return balance;
     }
+
+    public BigDecimal getBalanceById(int id){
+        String sql = "SELECT balance " +
+                     "FROM account JOIN tenmo_user on account.user_id = tenmo_user.user_id " +
+                     "WHERE user_id = ?;";
+
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql, id);
+        BigDecimal balance = new BigDecimal(0.00);
+
+        if (result.next()){
+            balance = result.getBigDecimal("balance");
+        }
+        return balance;
+    }
 }
 
-//principal, - get name to get username
-  //      use jdbc template to get rowset
-    //    now with maptoaccount(result) you have an account( find balance)
+
 
 
