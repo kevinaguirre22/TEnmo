@@ -1,12 +1,17 @@
 package com.techelevator.tenmo.model;
 
+import javax.validation.constraints.Min;
 import java.math.BigDecimal;
 
 public class Transfer {
+
+
     private int transferId;
     private int transferTo;
     private int transferFrom;
+    @Min(value = 0, message = "Cannot transfer less than zero dollar amount")
     private BigDecimal amount;
+    private String status;
 
     public Transfer() {
     }
@@ -41,5 +46,13 @@ public class Transfer {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
