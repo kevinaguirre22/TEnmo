@@ -34,7 +34,7 @@ public class JdbcAccountDao implements AccountDao {
         return balance;
     }
 
-    public BigDecimal getBalanceById(int id){
+/*    public BigDecimal getBalanceById(int id){
         String sql = "SELECT balance " +
                      "FROM account JOIN tenmo_user on account.user_id = tenmo_user.user_id " +
                      "WHERE account.user_id = ?;";
@@ -46,7 +46,7 @@ public class JdbcAccountDao implements AccountDao {
             balance = result.getBigDecimal("balance");
         }
         return balance;
-    }
+    }*/
 }
 
 

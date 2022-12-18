@@ -11,7 +11,7 @@ public interface TransferDao {
 
     BigDecimal deposit(int to, BigDecimal amount);
 
-    void transfer(String username, BigDecimal amount);
+//    void transfer(String username, BigDecimal amount);
 
     List<Transfer> listAllTransfers(String username);
 

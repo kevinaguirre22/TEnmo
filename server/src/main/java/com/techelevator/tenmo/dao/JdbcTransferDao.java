@@ -37,7 +37,7 @@ public class JdbcTransferDao implements TransferDao {
         return amount;
     }
 
-    @Override
+/*    @Override
     public void transfer(String username, BigDecimal amount){
         String sql = "BEGIN TRANSACTION; " +
                      "UPDATE account SET balance = balance - ? " +
@@ -47,7 +47,7 @@ public class JdbcTransferDao implements TransferDao {
                      "COMMIT;";
 
         jdbcTemplate.update(sql, amount, "kevin", amount, "katie");
-    }
+    }*/
 
     public void createTransfer(Transfer transfer){
         //Transfer transfer = new Transfer();

@@ -87,11 +87,14 @@ public class AccountController {
         return transfers;
     }
 
-    @RequestMapping(path = "/listing-transfers/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/listing-transfers/{transferId}", method = RequestMethod.GET)
     public Transfer transferById(@PathVariable int transferId){
+
         //String username = principal.getName();
 
-        return jdbcTransferDao.getTransferByTransferId(transferId);
+        Transfer transfer = jdbcTransferDao.getTransferByTransferId(transferId);
+
+        return transfer;
     }
 
 }
